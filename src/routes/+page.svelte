@@ -19,6 +19,11 @@
             <Badge variant="outline">{ipInfo.country}</Badge>
             <Badge variant="outline">{ipInfo.asn}</Badge>
             <Badge variant="outline">{ipInfo.as_domain}</Badge>
+            <Badge variant="outline">{ipInfo.as_domain}</Badge>
+            {#if data.isUsingDNSSEC}
+                <Badge variant="outline">DNSSEC Enabled</Badge>
+            {/if}
+            <Badge variant="outline">Authoritative NS: {data.authoritativeNameServers.join(', ')}</Badge>
         </div>
     {:else}
         <p>Unable to retrieve IP information.</p>
