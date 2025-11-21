@@ -5,6 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "eleos-iputil",
+	"account_id": "14fabe4a10d3c8e3e8940ce0663826a5",
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"compatibility_date": "2025-11-21",
 	"compatibility_flags": [
