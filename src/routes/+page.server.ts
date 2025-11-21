@@ -15,7 +15,7 @@ type IPInfoResp = {
 export const load: PageServerLoad = async (event) => {
     const clientIPAddress = event.getClientAddress();
 
-    const res = await fetch(`https://ipinfo.io/${clientIPAddress}/json?token=${env.IPINFO_TOKEN}`);
+    const res = await fetch(`https://api.ipinfo.io/lite/${clientIPAddress}?token=${env.IPINFO_TOKEN}`);
     const data: IPInfoResp = await res.json();
 
     return {
