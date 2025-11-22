@@ -42,7 +42,7 @@
 				<Card.Header class="pb-3">
 					<Card.Title>IP Address</Card.Title>
 					<Card.Description class="max-w-lg text-balance leading-relaxed">
-						Query: {query}
+						Query: <span class="font-mono">{query}</span>
 					</Card.Description>
 				</Card.Header>
 				<Card.Content>
