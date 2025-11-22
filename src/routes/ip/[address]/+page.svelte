@@ -64,8 +64,8 @@
 			<Card.Root>
 				<Card.Header class="pb-2">
 					<Card.Description>Timezone</Card.Description>
-					<Card.Title class="text-xl">
-						{ipInfo.time_zone}
+					<Card.Title class="text-md">
+						<span class="font-mono">{ipInfo.time_zone}</span>
 					</Card.Title>
 				</Card.Header>
 			</Card.Root>

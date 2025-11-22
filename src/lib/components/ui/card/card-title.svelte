@@ -13,7 +13,7 @@
 <div
 	bind:this={ref}
 	data-slot="card-title"
-	class={cn("font-semibold leading-none", className)}
+	class={cn("font-semibold leading-none overflow-hidden text-ellipsis", className)}
 	{...restProps}
 >
 	{@render children?.()}
