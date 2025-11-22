@@ -158,6 +158,7 @@ export const load: PageServerLoad = async (event) => {
     const data: IPLocateResp = await res.json();
 
     return {
+        query: query,
         ipInfo: data,
         resolved: resolvedA,
         isUsingDNSSEC: isUsingDNSSEC(resolvedNS),
