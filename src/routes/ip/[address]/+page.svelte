@@ -81,7 +81,7 @@
 				<Card.Description>Approximate geolocation and ASN information</Card.Description>
 			</Card.Header>
 			<Card.Content class="grid gap-4 md:grid-cols-2">
-				<div class="h-64 w-full overflow-hidden rounded-md border">
+				<div class="h-full w-full overflow-hidden rounded-md border">
 					<XMap lat={ipInfo.latitude} lon={ipInfo.longitude} />
 				</div>
 				<div class="flex flex-col gap-4">
