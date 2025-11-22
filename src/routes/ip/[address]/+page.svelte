@@ -13,6 +13,10 @@
 	let { data } = $props<{ data: PageData }>();
 	
 	const { query, ipInfo, resolved, isUsingDNSSEC, authoritativeNameServers } = data;
+
+	const getFlagEmoji = (countryCode: string) => {
+		return countryCode.toUpperCase().replace(/./g, (char) => String.fromCodePoint(127397 + char.charCodeAt(0)));
+	}
 	
 	const privacyFlags = [
 		{ label: 'VPN', value: ipInfo.privacy.is_vpn },
@@ -55,7 +59,7 @@
 				<Card.Header class="pb-2">
 					<Card.Description>Country</Card.Description>
 					<Card.Title class="text-xl flex items-center gap-2">
-						<span class="text-2xl">{ipInfo.country_code}</span>
+						<span class="text-2xl">{getFlagEmoji(ipInfo.country_code)}</span>
 						{ipInfo.country}
 					</Card.Title>
 				</Card.Header>

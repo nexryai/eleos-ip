@@ -43,7 +43,7 @@ interface DnsRecord {
     data: string;
 }
 
-interface DnsResponse {
+export interface DnsResponse {
     Status: DnsStatus | number;
     TC: boolean;
     RD: boolean;
@@ -104,7 +104,7 @@ interface AbuseInfo {
     phone: string;
 }
 
-interface IPLocateResp {
+export interface IPLocateResp {
     ip: string;
     country: string;
     country_code: string;
