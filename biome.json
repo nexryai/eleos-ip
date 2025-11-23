@@ -30,7 +30,7 @@
                 "organizeImports": {
                     "level": "on",
                     "options": {
-                        "groups": [["svelte", "svelte/**"], ["@sveltejs", "@sveltejs/**"], ["$env/**"], ":BLANK_LINE:", ":PACKAGE:", ":BLANK_LINE:", ":ALIAS:", ":PATH:", ":BLANK_LINE:"]
+                        "groups": [["svelte", "svelte/**"], ["@sveltejs", "@sveltejs/**"], ["$app/**", "$env/**"], ":BLANK_LINE:", ":PACKAGE:", ":BLANK_LINE:", ":ALIAS:", ":PATH:", ":BLANK_LINE:"]
                     }
                 }
             }
