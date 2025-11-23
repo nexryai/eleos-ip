@@ -41,7 +41,9 @@
 
                 "files.associations": {
                     "*.css": "tailwind"
-                }
+                },
+
+                "biome.lsp.bin": "pnpm biome"
             }
         }
     }
