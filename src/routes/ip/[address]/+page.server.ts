@@ -1,5 +1,5 @@
-import { env } from '$env/dynamic/private';
-import type { PageServerLoad } from './$types';
+import { env } from "$env/dynamic/private";
+import type { PageServerLoad } from "./$types";
 
 // ---------------------------------------------------------
 // Google Public DNSのレスポンス型定義
@@ -28,8 +28,8 @@ const DnsStatus = {
     REFUSED: 5,
 } as const;
 
-export type DnsRecordType = typeof DnsRecordType[keyof typeof DnsRecordType];
-export type DnsStatus = typeof DnsStatus[keyof typeof DnsStatus];
+export type DnsRecordType = (typeof DnsRecordType)[keyof typeof DnsRecordType];
+export type DnsStatus = (typeof DnsStatus)[keyof typeof DnsStatus];
 
 interface DnsQuestion {
     name: string;
@@ -54,7 +54,6 @@ export interface DnsResponse {
     Answer?: DnsRecord[];
     Comment?: string;
 }
-
 
 // ---------------------------------------------------------
 // IPLocateのレスポンス型定義
@@ -129,7 +128,7 @@ export interface IPLocateResp {
 
 const isUsingDNSSEC = (dnsResponse: DnsResponse): boolean => {
     return dnsResponse.Answer?.some((record) => record.type === DnsRecordType.RRSIG) ?? false;
-}
+};
 
 const getAuthoritativeNameServer = (dnsResponse: DnsResponse): string[] => {
     const nameServers: string[] = [];
@@ -139,20 +138,20 @@ const getAuthoritativeNameServer = (dnsResponse: DnsResponse): string[] => {
         }
     });
     return nameServers;
-}
+};
 
 const resolve = async (query: string, type: string): Promise<DnsResponse> => {
     const resolveRes = await fetch(`https://dns.google/resolve?name=${query}&type=${type}&do=true`);
     const resolved: DnsResponse = await resolveRes.json();
     return resolved;
-}
+};
 
 export const load: PageServerLoad = async (event) => {
     const query = event.params.address;
-    const [resolvedA, resolvedNS] = await Promise.all([resolve(query, 'A'), resolve(query, 'NS')]);
+    const [resolvedA, resolvedNS] = await Promise.all([resolve(query, "A"), resolve(query, "NS")]);
 
     // NOERRORで解決された場合はクエリがドメイン名であると判断する
-    const ipAddress = resolvedA.Status === DnsStatus.NOERROR ? resolvedA.Answer?.find(record => record.type === DnsRecordType.A || record.type === DnsRecordType.AAAA)?.data : query;
+    const ipAddress = resolvedA.Status === DnsStatus.NOERROR ? resolvedA.Answer?.find((record) => record.type === DnsRecordType.A || record.type === DnsRecordType.AAAA)?.data : query;
 
     const res = await fetch(`https://iplocate.io/api/lookup/${ipAddress}?apikey=${env.IPLOCATE_API_KEY}`);
     const data: IPLocateResp = await res.json();
