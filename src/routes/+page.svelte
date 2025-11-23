@@ -9,20 +9,15 @@
 
     const ipInfo = data.ipInfo;
 
-    // 変更点1: 入力値を変更可能にするため $state を使用
     let inputValue = $state(ipInfo ? ipInfo.ip : "");
-
-    // $derived は依存関係(inputValue)が変わると自動更新されます
     let allowSearch = $derived(inputValue.length > 0);
 
-    // 変更点2: 検索実行用関数
     const handleSearch = () => {
         if (allowSearch) {
             goto(`/ip/${inputValue}`);
         }
     };
 
-    // 変更点3: Enterキー判定用関数
     const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Enter") {
             handleSearch();
