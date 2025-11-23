@@ -1,0 +1,48 @@
+{
+    "name": "Eleos Dev",
+    "image": "node:24",
+    "features": {
+        "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "node",
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": ["svelte.svelte-vscode", "biomejs.biome", "bradlc.vscode-tailwindcss"],
+            "settings": {
+                "editor.linkedEditing": true,
+                "editor.formatOnPaste": true,
+                "editor.formatOnSave": true,
+
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports.biome": "explicit"
+                },
+
+                "[typescript]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+                "[typescriptreact]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+                "[svelte]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+                "[json]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+                "[javascriptreact]": {
+                    "editor.defaultFormatter": "biomejs.biome"
+                },
+
+                "files.associations": {
+                    "*.css": "tailwind"
+                }
+            }
+        }
+    }
+}
