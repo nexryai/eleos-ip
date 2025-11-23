@@ -1,8 +1,10 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
+
     import { Badge } from "$lib/components/ui/badge/index.js";
     import { Button } from "$lib/components/ui/button";
     import { Input } from "$lib/components/ui/input/index.js";
+    
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
