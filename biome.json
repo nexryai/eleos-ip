@@ -22,10 +22,6 @@
             "suspicious": {
                 "noUnknownAtRules": "off"
             }
-        },
-        "domains": {
-            "next": "recommended",
-            "react": "recommended"
         }
     },
     "assist": {
@@ -34,7 +30,7 @@
                 "organizeImports": {
                     "level": "on",
                     "options": {
-                        "groups": [["next", "next/**"], ["react*", "react/**"], ":BLANK_LINE:", ":PACKAGE:", ":BLANK_LINE:", ":ALIAS:", ":PATH:", ":BLANK_LINE:"]
+                        "groups": [["svelte", "svelte/**"], ["@sveltejs", "@sveltejs/**"], ["$env/**"], ":BLANK_LINE:", ":PACKAGE:", ":BLANK_LINE:", ":ALIAS:", ":PATH:", ":BLANK_LINE:"]
                     }
                 }
             }
