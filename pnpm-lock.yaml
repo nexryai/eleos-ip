@@ -11,6 +11,9 @@ importers:
       '@biomejs/biome':
         specifier: ^2.3.7
         version: 2.3.7
+      '@icons-pack/svelte-simple-icons':
+        specifier: ^6.5.0
+        version: 6.5.0(@sveltejs/kit@2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.43.14)
       '@internationalized/date':
         specifier: ^3.10.0
         version: 3.10.0
@@ -491,6 +494,13 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@icons-pack/svelte-simple-icons@6.5.0':
+    resolution: {integrity: sha512-Xj3PTioiV3TJ1NTKsXY95NFG8FUqw90oeyDZIlslWHs1KkuCheu1HOPrlHb0/IM0b4cldPgx/0TldzxzBlM8Cw==}
+    engines: {node: '>=20', pnpm: '>=9'}
+    peerDependencies:
+      '@sveltejs/kit': ^2.5.0
+      svelte: ^4.2.0 || ^5.0.0
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1631,6 +1641,11 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@icons-pack/svelte-simple-icons@6.5.0(@sveltejs/kit@2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.43.14)':
+    dependencies:
+      '@sveltejs/kit': 2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.43.14)(vite@7.2.4(jiti@2.6.1)(lightningcss@1.30.2))
+      svelte: 5.43.14
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
