@@ -1,14 +1,16 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	import XMap from '$lib/components/XMap.svelte';
-	
-	import { Button } from '$lib/components/ui/button';
+	import { ArrowLeft, Check, Globe, Network, Shield, ShieldAlert, X } from 'lucide-svelte';
+
 	import { Badge } from '$lib/components/ui/badge';
-	import { Separator } from '$lib/components/ui/separator';
+	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
+	import { Separator } from '$lib/components/ui/separator';
 	import * as Table from '$lib/components/ui/table';
-	
-	import { ArrowLeft, Check, X, Shield, ShieldAlert, Globe, Network } from 'lucide-svelte';
+	import XBadges from '$lib/components/XBadges.svelte';
+	import XMap from '$lib/components/XMap.svelte';
+
+	import type { PageData } from './$types';
+
 
 	let { data } = $props<{ data: PageData }>();
 	
@@ -46,8 +48,21 @@
 					</Card.Description>
 				</Card.Header>
 				<Card.Content>
-					<div class="flex items-center gap-2 text-2xl font-bold">
-						{ipInfo.ip}
+					<div class="mb-2">
+						<XBadges 
+							asn={ipInfo.asn.asn} 
+							companyName={ipInfo.company.name} 
+							companyDomain={ipInfo.company.domain} 
+							companyType={ipInfo.company.type} 
+							isHosting={ipInfo.privacy.is_hosting} 
+							isICloudPrivateRelay={ipInfo.privacy.is_icloud_relay} 
+							isVPN={ipInfo.privacy.is_vpn} 
+							isProxy={ipInfo.privacy.is_proxy} 
+							isTor={ipInfo.privacy.is_tor} 
+						/>
+					</div>
+					<div class="flex items-center gap-2 text-2xl font-bold ">
+						<span class="overflow-hidden text-ellipsis">{ipInfo.ip}</span>
 						{#if ipInfo.is_eu}
 							<Badge variant="outline" class="ml-2 text-xs font-normal">EU Region</Badge>
 						{/if}
