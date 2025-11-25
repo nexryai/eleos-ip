@@ -5,7 +5,7 @@ const securityHeaders = {
     "Permissions-Policy": "interest-cohort=(), browsing-topics=(), accelerometer=(), camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=(), ambient-light-sensor=(), battery=(), local-fonts=(), magnetometer=(), serial=(), usb=(), window-management=()",
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
-    "Cross-Origin-Opener-Policy": "noopener-allow-popups"
+    "Cross-Origin-Opener-Policy": "same-origin"
 };
 
 export const handle: Handle = async ({ event, resolve }) => {
