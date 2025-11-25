@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ArrowLeft, Check, Globe, Network, Shield, ShieldAlert, X } from 'lucide-svelte';
+
+	import { ArrowLeft, Check, Globe, Network, Share2, Shield, ShieldAlert, X } from 'lucide-svelte';
 
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
@@ -8,7 +9,6 @@
 	import * as Table from '$lib/components/ui/table';
 	import XBadges from '$lib/components/XBadges.svelte';
 	import XMap from '$lib/components/XMap.svelte';
-
 	import type { PageData } from './$types';
 
 
@@ -27,12 +27,26 @@
 		{ label: 'Hosting', value: ipInfo.privacy.is_hosting },
 		{ label: 'Relay', value: ipInfo.privacy.is_icloud_relay },
 	];
+
+	const shareCurrentURL = async (): Promise<void> => {
+		const url = new URL(window.location.href);
+
+		// Firefoxでは　navigator.shareがサポートされていないため、必要に応じてClipboard APIにフォールバック
+		"share" in navigator
+			? navigator.share({ url: url.toString() })
+			: (navigator as Navigator).clipboard.writeText(url.toString());
+	};
+
 </script>
 
-<div class="mt-4 p-4">
+<div class="flex justify-between mt-4 p-4">
 	<Button variant="ghost" href="/" class="gap-2">
 		<ArrowLeft size={16} />
-		検索に戻る
+		Return to Search
+	</Button>
+	<Button variant="ghost" onclick={shareCurrentURL} class="gap-2">
+		<Share2 size={16} />
+		Share
 	</Button>
 </div>
 
