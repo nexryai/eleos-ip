@@ -18,7 +18,7 @@
     <footer class="mt-32 h-24 px-6 flex md:flex-row flex-col justify-between items-center w-full">
         <div>
             <p class="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} IP Info Finder. All rights reserved.
+                &copy;{new Date().getFullYear()} nexryai  All rights reserved.
             </p>
             <p class="text-sm text-muted-foreground">
                 Map data: &copy;Mapbox & &copy;OpenStreetMap
