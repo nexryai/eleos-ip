@@ -25,6 +25,18 @@ const config = {
                 exclude: ["<all>"],
             },
         }),
+        csp: {
+            mode: "nonce",
+            directives: {
+                "default-src": ["'self'"],
+                "script-src": ["'self'"],
+                "style-src": ["'self'"],
+                "img-src": ["'self'", "data:", "https://api.mapbox.com"],
+                "font-src": ["'self'", "data:"],
+                "connect-src": ["'self'"],
+                "frame-src": ["'none'"],
+            }
+        }
     },
 };
 
