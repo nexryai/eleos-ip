@@ -26,16 +26,18 @@
     };
 </script>
 
-<div class="mt-24 mx-8">
-    <div class="flex justify-between items-center">
+<div class="md:ml-32 mt-24 mx-8">
+    <div class="flex justify-between items-center w-full">
         <div>
             <h1 class="text-2xl font-bold mb-4">
                 Find out more information <br>
                 about IP address!
             </h1>
         </div>
-        <div class="flex justify-start">
-            <img src="/undraw_global-team_8jok.svg" alt="Global Team Illustration" class="w-64 ml-6">
+        <div class="w-lg">
+            <div class="aspect-4/3 w-full relative rounded-lg overflow-hidden">
+                <img src="/undraw_global-team_8jok.svg" alt="Global Team Illustration" width="800" height="600" class="w-full h-full object-contain ml-6" loading="eager">
+            </div>
         </div>
     </div>
     <div class="flex justify-start w-full">
@@ -44,7 +46,7 @@
         </div>
     </div>
 
-    <div class="mt-10">
+    <div class="md:mt-0 mt-10">
         {#if ipInfo.asn}
             <div class="flex gap-2 mt-3">
                 <Badge variant="outline">{ipInfo.country}</Badge>
